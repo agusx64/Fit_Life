@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/stylesheets/menu.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <div class="menu_container">
+
+        <!-- Barra de navegacion -->
+        <nav class="navbar">
+            <!-- Icono -->
+            <div class="img_icon">
+                <i class="bi bi-bicycle"></i>
+                <p class="text_icon">Vida Fit</p>
+            </div>
+            <!-- Lista de elementos -->
+            <div class="list_navbar">
+                <ul class="list">
+                    <li class="list_element" id="button_product">
+                        <i class="bi bi-box-seam-fill icon_sidebar"></i>
+                        Productos
+                    </li>
+                    <li class="list_element" id="button_members">
+                        <i class="bi bi-wallet2 icon_sidebar"></i>
+                        Membresias
+                    </li>
+                    <li class="list_element" id="button_users">
+                        <i class="bi bi-person-circle icon_sidebar"></i>
+                        Clientes
+                    </li>
+                </ul>
+            </div>
+            <!-- Informacion del usuario -->
+            <div class="user_card">
+                <i class="bi bi-person-circle user"></i>
+                <div class="user_text">
+                    <span class="user_name">Agustin Mora</span>
+                    <span class="user_role">Administrador</span>
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- Contenedor de menus contextuales -->
+        <div class="dinamic_menu">
+            <div class="menu_style" id="context_products">
+                <section class="menu_header">
+                    <section class="dashboard_name">
+                        <div class="icon_menu_header">
+                            <i class="bi bi-box-seam-fill"></i>
+                        </div>
+                        <div class="text_menu_header">
+                            <h1 class="menu_title">Estado de Productos</h1>
+                            <p class="text_description">En este menu puedes revisar el estado general de los productos de Vida Fit</p>
+                        </div>
+                    </section>
+                    <div class="date_now">
+                        <div class="icon_calendar">
+                            <i class="bi bi-calendar-week"></i>
+                        </div>
+                        <strong>Hoy: <p class="date_today"></p></strong>
+                    </div>
+                </section>
+
+                <!-- Registrar producto -->
+                <section class="product_viewer">
+
+                    <!-- Botones para abrir modales -->
+                    <aside class="column_buttons">
+                        <button class="aside_button" id="up_product">
+                            <i class="bi bi-plus-circle button_icon"></i>                            
+                            <p>Agregar <br>producto</p>
+                        </button>
+                        <button class="aside_button" id="update_product">
+                            <i class="bi bi-tools button_icon"></i>
+                            <p>Actualizar <br>producto</p>
+                        </button>
+                        <button class="aside_button" id="delete_product">
+                            <i class="bi bi-trash-fill button_icon"></i>
+                            <p>Eliminar <br>producto</p>
+                        </button>
+                        <button class="aside_button" id="sell_product">
+                            <i class="bi bi-coin button_icon"></i>
+                            <p>Realizar <br>venta</p>
+                        </button>
+                    </aside>
+                    <div class="recent_products_container">
+                        <div class="product_card">
+                            <img id="img_card_1" class="img_product" src="">
+                            <div class="product_info">
+                                <h3 id="title_card_1"></h3>
+                                <p id="price_card_1" class="price"></p>
+                                <p id="description_card_1" class="product_description"></p>
+                            </div>
+                        </div>
+
+                        <div class="product_card">
+                            <img id="img_card_2" class="img_product" src="">
+                            <div class="product_info">
+                                <h3 id="title_card_2"></h3>
+                                <p id="price_card_2" class="price"></p>
+                                <p id="description_card_2" class="product_description"></p>
+                            </div>
+                        </div>
+
+                        <div class="product_card">
+                            <img id="img_card_3" class="img_product" src="">
+                            <div class="product_info">
+                                <h3 id="title_card_3"></h3>
+                                <p id="price_card_3" class="price"></p>
+                                <p id="description_card_3" class="product_description"></p>
+                            </div>
+                        </div>
+
+                        <div class="product_card">
+                            <img id="img_card_4" class="img_product" src="">
+                            <div class="product_info">
+                                <h3 id="title_card_4"></h3>
+                                <p id="price_card_4" class="price"></p>
+                                <p id="description_card_4" class="product_description"></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="products_complete_list">
+                        <h4 class="table_title">Registro de productos</h4>
+                        <table class="style_table">
+                            <thead id="table_head" class="table_head_style">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Link de imagen</th>
+                                </tr>
+                            </thead>
+                            <tbody id="body_list_products">
+                            </tbody>
+                        </table>
+
+                        <h4 class="table_title sells">Venta de productos</h4>
+                        <table class="style_table">
+                            <thead id="table_head" class="table_head_style">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Fecha de venta</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="body_list_sells">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <div class="menu_style" id="context_members">
+                <section class="menu_header">
+                    <section class="dashboard_name">
+                        <div class="icon_menu_header">
+                            <i class="bi bi-wallet2"></i>                        
+                        </div>
+                        <div class="text_menu_header">
+                            <h1 class="menu_title">Estado de las Membresias</h1>
+                            <p class="text_description">En este menu puedes revisar el estado general de las membresias</p>
+                        </div>
+                    </section>
+                    <div class="date_now">
+                        <div class="icon_calendar">
+                            <i class="bi bi-calendar-week"></i>
+                        </div>
+                        <strong>Hoy: <p class="date_today"></p></strong>
+                    </div>
+                </section>
+
+                <section class="product_viewer">
+
+                    <!-- Botones para abrir modales -->
+                    <aside class="column_buttons">
+                        <button class="aside_button" id="up_member">
+                            <i class="bi bi-plus-circle button_icon"></i>                            
+                            <p>Agregar <br>membresia</p>
+                        </button>
+                        <button class="aside_button" id="update_member">
+                            <i class="bi bi-tools button_icon"></i>
+                            <p>Actualizar <br>membresia</p>
+                        </button>
+                        <button class="aside_button" id="delete_member">
+                            <i class="bi bi-trash-fill button_icon"></i>
+                            <p>Eliminar <br>membresia</p>
+                        </button>
+                        <button class="aside_button" id="sell_member">
+                            <i class="bi bi-coin button_icon"></i>
+                            <p>Realizar <br>Compra</p>
+                        </button>
+                    </aside>
+                    <div class="recent_products_container">
+                        <div class="product_card">
+                            <img id="img_card_1_member" class="img_product" src="">
+                            <div class="product_info member_card">
+                                <h3 id="title_card_1_member"></h3>
+                                <p id="price_card_1_member" class="price"></p>
+                                <p id="description_card_1_member" class="product_description"></p>
+                            </div>
+                        </div>
+
+                        <div class="product_card">
+                            <img id="img_card_2_member" class="img_product" src="">
+                            <div class="product_info member_card">
+                                <h3 id="title_card_2_member"></h3>
+                                <p id="price_card_2_member" class="price"></p>
+                                <p id="description_card_2_member" class="product_description"></p>
+                            </div>
+                        </div>
+
+                        <div class="product_card">
+                            <img id="img_card_3_member" class="img_product" src="">
+                            <div class="product_info member_card">
+                                <h3 id="title_card_3_member"></h3>
+                                <p id="price_card_3_member" class="price"></p>
+                                <p id="description_card_3_member" class="product_description"></p>
+                            </div>
+                        </div>
+
+                        <div class="product_card">
+                            <img id="img_card_4_member" class="img_product" src="">
+                            <div class="product_info member_card">
+                                <h3 id="title_card_4_member"></h3>
+                                <p id="price_card_4_member" class="price"></p>
+                                <p id="description_card_4_member" class="product_description"></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="products_complete_list">
+                        <h4 class="table_title">Registro de membresias</h4>
+                        <table class="style_table">
+                            <thead id="table_head" class="table_head_style">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Costo</th>
+                                    <th>Duracion</th>
+                                    <th>Link de imagen</th>
+                                </tr>
+                            </thead>
+                            <tbody id="body_list_members">
+                            </tbody>
+                        </table>
+
+                        <h4 class="table_title sells">Compra de membresias</h4>
+                        <table class="style_table">
+                            <thead id="table_head" class="table_head_style">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Membresia</th>
+                                    <th>Fecha de inicio</th>
+                                    <th>Fecha de vencimiento</th>
+                                </tr>
+                            </thead>
+                            <tbody id="body_list_buys">
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+
+            </div>
+            <div class="menu_style" id="context_users">
+                <section class="menu_header">
+                    <section class="dashboard_name">
+                        <div class="icon_menu_header">
+                            <i class="bi bi-person-circle"></i>                       
+                        </div>
+                        <div class="text_menu_header">
+                            <h1 class="menu_title">Estado de los clientes</h1>
+                            <p class="text_description">En este menu puedes revisar el estatus de los clientes</p>
+                        </div>
+                    </section>
+                    <div class="date_now">
+                        <div class="icon_calendar">
+                            <i class="bi bi-calendar-week"></i>
+                        </div>
+                        <strong>Hoy: <p class="date_today"></p></strong>
+                    </div>
+                </section>
+
+                <section class="product_viewer">
+                    <!-- Botones para abrir modales -->
+                    <aside class="column_buttons">
+                        <button class="aside_button" id="up_client">
+                            <i class="bi bi-plus-circle button_icon"></i>                            
+                            <p>Agregar <br>cliente</p>
+                        </button>
+                        <button class="aside_button" id="update_client">
+                            <i class="bi bi-tools button_icon"></i>
+                            <p>Actualizar <br>cliente</p>
+                        </button>
+                        <button class="aside_button" id="delete_client">
+                            <i class="bi bi-trash-fill button_icon"></i>
+                            <p>Eliminar <br>cliente</p>
+                        </button>
+                        <button class="aside_button" id="asistence_client">
+                            <i class="bi bi-check-square-fill button_icon"></i>                            
+                            <p>Registrar <br>asistencia</p>
+                        </button>
+                    </aside>
+                    <div class="clients_container">
+                        <div class="new_clients">
+                            <div class="product_info">
+                                <h3 id="title_card_1_client"></h3>
+                                <p id="description_card_1_client" class="product_description"></p>
+                            </div>
+                            <i class="bi bi-person-vcard-fill icon_card"></i>
+                        </div>
+
+                        <div class="new_clients">
+                            <div class="product_info">
+                                <h3 id="title_card_2_client"></h3>
+                                <p id="description_card_2_client" class="product_description"></p>
+                            </div>
+                            <i class="bi bi-person-vcard-fill icon_card"></i>
+                        </div>
+
+                        <div class="new_clients">
+                            <div class="product_info">
+                                <h3 id="title_card_3_client"></h3>
+                                <p id="description_card_3_client" class="product_description"></p>
+                            </div>
+                            <i class="bi bi-person-vcard-fill icon_card"></i>
+                        </div>
+
+                        <div class="new_clients">
+                            <div class="product_info">
+                                <h3 id="title_card_4_client"></h3>
+                                <p id="description_card_4_client" class="product_description"></p>
+                            </div>
+                            <i class="bi bi-person-vcard-fill icon_card"></i>
+                        </div>
+
+                        <div class="new_clients">
+                            <div class="product_info">
+                                <h3 id="title_card_5_client"></h3>
+                                <p id="description_card_5_client" class="product_description"></p>
+                            </div>
+                            <i class="bi bi-person-vcard-fill icon_card"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="products_complete_list">
+                        <h4 class="table_title">Registro de clientes</h4>
+                        <table class="style_table">
+                            <thead id="table_head" class="table_head_style">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>RFC</th>
+                                    <th>Fecha de registro</th>
+                                </tr>
+                            </thead>
+                            <tbody id="body_list_clients">
+                            </tbody>
+                        </table>
+
+                        <h4 class="table_title sells">Registro de asistencias</h4>
+                        <table class="style_table">
+                            <thead id="table_head" class="table_head_style">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha de asistencia</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="body_list_asistence">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Componentes independientes -->
+    
+    <!-- Preview de imagenes en tabla -->
+    <div id="image_preview" class="image_preview"></div>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Formulario de registro (Productos) -->
+    <div id="modal_overlay_register" class="modal_overlay">
+        <div class="form_register" id="modal_register">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Registrar Producto</h2>
+            <section class="inputs_modal">
+                <div class="input_component">
+                    <p class="label_input">Nombre del producto</p>
+                    <input class="input_style" type="text" id="name" placeholder="Bicicleta" maxlength="100" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Descripción del producto</p>
+                    <input class="input_style" type="text" id="description" placeholder="Estática de acero inoxidable" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Precio</p>
+                    <input class="input_style" type="number" id="price" placeholder="500" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Cantidad en stock</p>
+                    <input class="input_style" type="number" id="stock" placeholder="12" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Imagen del producto</p>
+                    <input type="file" id="image" accept="image/*" required>
+                </div>
+                <button id="insert_register" class="update_product" disabled>Registrar producto</button>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Formulario de actualizacion de producto (Productos) -->
+    <div id="modal_overlay_update" class="modal_overlay">
+        <div class="form_updater" id="modal_updater">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Actualizar producto</h2>
+            <section class="inputs_modal">
+                <div class="input_component">
+                    <p class="label_input">ID para buscar el producto</p>
+                    <div class="search_product_component">
+                        <input class="input_style middle" type="text" id="id_input" placeholder="PVF001" maxlength="7" required>
+                        <button class="search_product" id="search_register_update" disabled>
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Nombre del producto</p>
+                    <input class="input_style" type="text" id="name_update" placeholder="Bicicleta" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Descripción del producto</p>
+                    <input class="input_style" type="text" id="description_update" placeholder="Estática de acero inoxidable" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Precio</p>
+                    <input class="input_style" type="number" id="price_update" placeholder="500" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Cantidad en stock</p>
+                    <input class="input_style" type="number" id="stock_update" placeholder="12" required>
+                </div>
+                <button class="update_product" id="update_register" disabled>Actualizar producto</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Formulario para borrar producto (Productos) -->
+    <div id="modal_overlay_delete" class="modal_overlay">
+        <div class="form_delete" id="modal_delete">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Borrar producto</h2>
+            <section class="inputs_modal">
+                <div class="input_component input_delete">
+                    <p class="label_input">ID para buscar el producto</p>
+                    <div class="search_product_component">
+                        <input class="input_style middle" type="text" id="search_input" placeholder="0001" maxlength="7" required>
+                        <button class="search_product" id="search_register_delete" disabled>
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <span class="label_modal">Nombre del producto</span>
+                <p class="label" id="name_product">Bicicleta Estatica</p>
+
+                <span class="label_modal">Descripción del producto</span>
+                <p class="label" id="description_product">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+
+                <span class="label_modal">Precio</span>
+                <p class="label" id="price_product">$3500</p>
+                
+                <span class="label_modal">Cantidad en stock</span>
+                <p class="label" id="stock_product">2</p>
+
+                <button id="delete_register" class="update_product delete_button" disabled>Borrar producto</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Formulario para la realizacion de ventas (Productos) -->
+    <div id="modal_overlay_sell" class="modal_overlay">
+        <div class="form_sell" id="modal_sell">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Realizar venta</h2>
+            <section class="inputs_modal">
+                <div class="selectors_container">
+                    <div class="id_user_container">
+                        <p class="label_input">Seleccionar ID del cliente</p>
+                        <select name="id_user" id="id_user">
+                        </select>
+                    </div>
+                    <div class="id_product_container">
+                        <p class="label_input">Seleccionar ID de producto</p>
+                        <select name="id_user" id="id_product">
+                        </select>
+                    </div>
+                </div>
+                <div class="date_number_container">
+                    <div class="date_container">
+                        <p class="label_input">Fecha de la venta</p>
+                        <input class="input_date" type="date" id="date_sell" required>
+                    </div>
+                    <div class="number_container">
+                        <p class="label_input">Unidades vendidas</p>
+                        <input class="input_number" type="number" id="number_sell" min="1" required>
+                    </div>
+                </div>
+                <div class="calculator">
+                    <div class="pay">
+                        <span class="label_modal total">Total a pagar</span>
+                        <p class="label" id="total_sell"></p>
+                    </div>
+                    <button id="search_calculate_button" class="calculate">
+                        <i class="bi bi-calculator"></i>
+                    </button>
+                </div>
+
+                <button class="update_product" id="register_sell">Registrar venta</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Formulario de registro (Membresias) -->
+    <div id="modal_overlay_member_register" class="modal_overlay">
+        <div class="form_register" id="modal_register_member">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Registro de membresia</h2>
+            <section class="inputs_modal">
+                <div class="input_component">
+                    <p class="label_input">Nombre de la membresia</p>
+                    <input class="input_style" type="text" id="name_member" placeholder="Gold Fit" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Precio de suscripción</p>
+                    <input class="input_style" type="number" id="price_member" placeholder="500" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Duracion de la membresia (En dias)</p>
+                    <input class="input_style" type="number" id="duration_member" placeholder="12" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Imagen de la membresia</p>
+                    <input type="file" id="image_member" accept="image/*" required>
+                </div>
+                <button id="insert_member" class="update_product" disabled>Registrar membresia</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Formulario de actualizacion (Membresias) -->
+    <div id="modal_overlay_member_update" class="modal_overlay">
+        <div class="form_updater" id="modal_updater_member">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Actualizar membresia</h2>
+            <section class="inputs_modal">
+                <div class="input_component">
+                    <p class="label_input">ID para buscar membresia</p>
+                    <div class="search_product_component">
+                        <input class="input_style middle" type="text" id="id_input_member" placeholder="MVF001" maxlength="7" required>
+                        <button class="search_product" id="search_member" disabled>
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Nombre de la membresia</p>
+                    <input class="input_style" type="text" id="name_update_member" placeholder="Bronce Fit" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Costo de la membresia</p>
+                    <input class="input_style" type="number" id="price_update_member" placeholder="200" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Duracion de la membresia</p>
+                    <input class="input_style" type="number" id="duration_update_member" placeholder="30" required>
+                </div>
+                <button class="update_product" id="button_update_member" disabled>Actualizar membresia</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Formulario para borrar membresia (Membresias) -->
+    <div id="modal_overlay_member_delete" class="modal_overlay">
+        <div class="form_delete" id="modal_delete_member">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Borrar membresia</h2>
+            <section class="inputs_modal">
+                <div class="input_component input_delete">
+                    <p class="label_input">ID para buscar la membresia</p>
+                    <div class="search_product_component">
+                        <input class="input_style middle" type="text" id="search_input_member" placeholder="MVF001" maxlength="7" required>
+                        <button class="search_product" id="search_member_delete" disabled>
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <span class="label_modal">Nombre de la membresia</span>
+                <p class="label" id="name_member_delete">GoldFit</p>
+
+                <span class="label_modal">Costo de la membresia</span>
+                <p class="label" id="price_member_delete">$300</p>
+
+                <span class="label_modal">Duracion de la membresia</span>
+                <p class="label" id="duration_member_delete">30 dias</p>
+
+                <button id="delete_member_register" class="update_product delete_button" disabled>Borrar membresia</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Formulario para la realizacion de compras (Membresias) -->
+    <div id="modal_overlay_member_buy" class="modal_overlay">
+        <div class="form_sell" id="modal_buy_member">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Realizar compra</h2>
+            <section class="inputs_modal">
+                <div class="selectors_container">
+                    <div class="id_user_container">
+                        <p class="label_input">Seleccionar ID del cliente</p>
+                        <select name="id_user" id="id_user_member">
+                        </select>
+                    </div>
+                    <div class="id_product_container">
+                        <p class="label_input">Seleccionar ID de membresia</p>
+                        <select name="id_user" id="id_member_buy">
+                        </select>
+                    </div>
+                </div>
+                <div class="date_number_container">
+                    <div class="date_container member_date">
+                        <p class="label_input">Fecha de compra</p>
+                        <input class="input_date" type="date" id="date_buy" required>
+                    </div>
+                </div>
+                <div class="calculator">
+                    <div class="pay">
+                        <span class="label_modal total">Total a pagar</span>
+                        <p class="label" id="total_buy"></p>
+                    </div>
+                    <div class="pay">
+                        <span class="label_modal total">Expira</span>
+                        <p class="label" id="date_expire"></p>
+                    </div>
+                    <button id="search_calculate_member" class="calculate">
+                        <i class="bi bi-calculator"></i>
+                    </button>
+                </div>
+
+                <button class="update_product" id="register_buy">Registrar compra</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Formulario de registro (Clientes) -->
+    <div id="modal_overlay_client_register" class="modal_overlay">
+        <div class="form_register" id="modal_register_client">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Registro de clientes</h2>
+            <section class="inputs_modal">
+                <div class="input_component">
+                    <p class="label_input">Nombre del cliente</p>
+                    <input class="input_style" type="text" id="name_client" placeholder="Agustin Mora" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">RFC del cliente</p>
+                    <input class="input_style" type="text" id="rfc_client" placeholder="MUTE090807" maxlength="10" required>
+                </div>
+                <button id="insert_client" class="update_product" disabled>Registrar cliente</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Formulario de actualizacion (Clientes) -->
+    <div id="modal_overlay_client_update" class="modal_overlay">
+        <div class="form_updater" id="modal_updater_client">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Actualizar cliente</h2>
+            <section class="inputs_modal">
+                <div class="input_component">
+                    <p class="label_input">ID para buscar cliente</p>
+                    <div class="search_product_component">
+                        <input class="input_style middle" type="text" id="id_input_client" placeholder="CVF001" maxlength="7" required>
+                        <button class="search_product" id="search_client" disabled>
+                            Buscar
+                        </button>
+                    </div>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">Nombre del cliente</p>
+                    <input class="input_style" type="text" id="input_name_client" placeholder="Bicicleta" required>
+                </div>
+                <div class="input_component">
+                    <p class="label_input">RFC del cliente</p>
+                    <input class="input_style" type="text" id="input_rfc_client" placeholder="MOTA030514" maxlength="10" required>
+                </div>
+                <button class="update_product" id="button_update_client" disabled>Actualizar cliente</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Formulario para borrar cliente (Clientes) -->
+    <div id="modal_overlay_client_delete" class="modal_overlay">
+        <div class="form_delete" id="modal_delete_client">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Borrar cliente</h2>
+            <section class="inputs_modal">
+                <div class="input_component input_delete">
+                    <p class="label_input">ID para buscar al cliente</p>
+                    <div class="search_product_component">
+                        <input class="input_style middle" type="text" id="search_input_client_delete" placeholder="CVF001" maxlength="7" required>
+                        <button class="search_product" id="search_client_delete" disabled>
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <span class="label_modal">Nombre del cliente</span>
+                <p class="label" id="name_client_delete">Agustin Mora</p>
+
+                <span class="label_modal">RFC del cliente</span>
+                <p class="label" id="rfc_client_delete">MUTG090523</p>
+
+                <button id="delete_client_register" class="update_product delete_button" disabled>Borrar cliente</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Formulario para registro de asistencias (Clientes) -->
+    <div id="modal_overlay_client_asistence" class="modal_overlay">
+        <div class="form_sell" id="modal_asistence_client">
+            <div class="close_button">
+                <i class="bi bi-x"></i>
+            </div>
+            <h2 class="title_modal">Registrar asistencia</h2>
+            <section class="inputs_modal">
+                <div class="selectors_container">
+                    <div class="id_user_container">
+                        <p class="label_input">Seleccionar ID del cliente</p>
+                        <select name="id_user" id="id_user_client">
+                        </select>
+                    </div>
+                    <div class="id_product_container">
+                        <p class="label_input">Seleccionar estado del cliente</p>
+                        <select name="id_user" id="id_asistence">
+                            <option value="Permitido">Permitido</option>
+                            <option value="Rechazado">Rechazado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="date_number_container">
+                    <div class="date_container member_date">
+                        <p class="label_input">Fecha de compra</p>
+                        <input class="input_date" type="date" id="date_asistence" required>
+                    </div>
+                </div>
+
+                <button class="update_product" id="register_asistence">Registrar asistencia</button>
+            </section>
+        </div>
+    </div>
+    
+    <script src="/javascripts/index.js"></script>
+</html>
