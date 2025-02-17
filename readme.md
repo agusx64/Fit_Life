@@ -12,12 +12,25 @@ Bienvenido a **Vida Fit**, una aplicación diseñada para ayudarte a llevar un e
 
 ## 📸 Capturas de pantalla
 
+**Dashboard productos**
 ![Dashboard productos](https://res.cloudinary.com/dohogoidz/image/upload/v1739765297/Captura_de_pantalla_2025-02-16_220059_zkxiuu.png)
+
+**Dashboard members**
 ![Dashboard members](https://res.cloudinary.com/dohogoidz/image/upload/v1739765297/Captura_de_pantalla_2025-02-16_220448_ic8lme.png)
+
+**Dashboard clientes**
 ![Dashboard clients](https://res.cloudinary.com/dohogoidz/image/upload/v1739765299/Captura_de_pantalla_2025-02-16_220718_rh934u.png)
+
+**Modal de eliminacion**
 ![Modal 1](https://res.cloudinary.com/dohogoidz/image/upload/v1739765299/Captura_de_pantalla_2025-02-16_220628_ppurq9.png)
+
+**Modal de registro**
 ![Modal 2](https://res.cloudinary.com/dohogoidz/image/upload/v1739765299/Captura_de_pantalla_2025-02-16_220535_y3krd0.png)
+
+**Modal de venta**
 ![Modal 3](https://res.cloudinary.com/dohogoidz/image/upload/v1739765299/Captura_de_pantalla_2025-02-16_220654_rpty5h.png)
+
+**Modal de actualizacion**
 ![Modal 4](https://res.cloudinary.com/dohogoidz/image/upload/v1739765299/Captura_de_pantalla_2025-02-16_220555_dqxewo.png)
 
 ---
@@ -64,4 +77,3 @@ Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de mi 
 ## 🏆 Licencia
 
 Este proyecto está bajo la licencia MIT.
-
