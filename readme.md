@@ -35,7 +35,7 @@ Bienvenido a **Vida Fit**, una aplicación diseñada para ayudarte a llevar un e
    ```
 3. **Configura las variables de entorno** (Ejemplo: `.env`)
    ```env
-   PORT=3000
+   PORT=4000
    DATABASE_URL=tu_base_de_datos
    ```
 4. **Inicia la aplicación**
