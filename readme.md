@@ -1,8 +1,6 @@
 # Vida Fit 🏋️‍♂️🥗
 
-Bienvenido a **Vida Fit**, una aplicación diseñada para ayudarte a llevar un estilo de vida saludable mediante la planificación de entrenamientos y una alimentación balanceada. 🚀
-
----
+Bienvenido a **Vida Fit**, una aplicación diseñada para el manejo de clientes, productos y suscripciones, con una interfaz intuitiva y facil de usar
 
 ## 📌 Características
 
