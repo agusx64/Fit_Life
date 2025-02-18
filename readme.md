@@ -4,7 +4,10 @@ Bienvenido a **Vida Fit**, una aplicación diseñada para el manejo de clientes,
 
 ## 📌 Características
 
-✅ Sistema para la administracion de productos 🔐 ✅ Sistema para la administracion de membresias 🏋️ ✅ Sistema para la administracion de clientes 🥦 ✅ Interfaz amigable y fácil de usar 🎨
+✅ Sistema para la administracion de productos 🛍 
+✅ Sistema para la administracion de membresias 🏋️
+✅ Sistema para la administracion de clientes 🧒 
+✅ Interfaz amigable y fácil de usar 🎨
 
 ---
 
@@ -60,9 +63,10 @@ Bienvenido a **Vida Fit**, una aplicación diseñada para el manejo de clientes,
 
 - **Node.js** + Express.js
 - **HTML** para vistas
-- **MySQL** (según el caso)
+- **MySQL** (Hosteada en railway)
 - **Cloudinary** (Bucket de imagenes)
 - **Dotenv** (Configuración de variables de entorno)
+- **Bootstrap (Estilos predefinidos)
 
 ---
 
